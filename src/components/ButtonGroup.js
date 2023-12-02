@@ -9,7 +9,7 @@ const ButtonGroup = () => {
     <div className='flex ml-5'>
       {
         categoryList.map((category)=>{
-          return <Button category={category}/>
+          return <Button category={category} key={category}/>
         })
       }
     </div>

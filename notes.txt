@@ -67,4 +67,14 @@ export default Body
 - If we click on hamburger menu icon, sidebar should collapse! It's gonna be available in your whole app. Let's just keep it in some global space! - Redux store!
 - We will keep the state of our sidebar in redux store. 
 - Install reux toolkit & react-redux. 
-- Create store using configureStore. Create slice using createSlice(name, initialState, reducers)
+- Create store using configureStore. Create slice using createSlice(name, initialState, reducers). Add slice in store. Subscribe. Dispatch an action. 
+
+- Discuss about how will you get the data for videos? Do you have any API? Hard code? 
+- Youtube provides api to fetch videos! youtube video api 
+- Create api key using Google. youtube api key auth. Enable Youtube in library. https://console.cloud.google.com/apis/api/youtube.googleapis.com/metrics?project=my-first-project-406921
+
+
+
+
+
+* Do you really need axios? You can use fetch! 
