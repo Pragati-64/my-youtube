@@ -6,8 +6,8 @@ const SideBar = () => {
 
       <div>
         <ul>
-          <li className='flex'> <img src='/images/home.png' className='h-6 p-1'/>Home</li>
-          <li className='flex'> <img src='/images/clock.png' className='h-6 p-1'/> Shorts</li>
+          <li className='flex'> <img src='/images/home.png' alt="home-icon" className='h-6 p-1'/>Home</li>
+          <li className='flex'> <img src='/images/clock.png' alt="clock-icon" className='h-6 p-1'/> Shorts</li>
           <li>Subscriptions</li>
         </ul>
       </div>
