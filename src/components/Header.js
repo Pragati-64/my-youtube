@@ -6,7 +6,7 @@ const Header = () => {
 
   const dispatch = useDispatch();
 
-  const handleSideBarMenu = ()=>{
+  const toggleMenuHandler = ()=>{
     dispatch(toggleMenu());
   }
 
@@ -14,7 +14,7 @@ const Header = () => {
     <div className='grid grid-flow-col m-4 p-4 shadow-lg'>
 
       <div className='flex col-span-1'>
-        <button onClick={()=>handleSideBarMenu()}><img alt='hamburger-menu-icon' src="/images/hamburger-menu.png" className='h-8' /></button>
+        <button onClick={()=>toggleMenuHandler()}><img alt='hamburger-menu-icon' src="/images/hamburger-menu.png" className='h-8' /></button>
         
         <img alt='youtube-logo' src="/images/youtube-logo.png" className='h-8 ml-4' />
       </div>
