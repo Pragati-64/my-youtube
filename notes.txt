@@ -1,0 +1,65 @@
+Started our react app: http://localhost:3000/
+
+Already installed everything for us. Webpack bundler, react, reactDOM, jest dom everything. 
+index.js => index.html 
+App.js 
+
+reportWebVitals = set of useful metrics that aim to capture the user experience of a web page. It measures and collect data on important web vitals. Such as LCP, Largest Contentful Paint = Time taken by the largest element visible on the screen to load. 
+
+React.StrictMode = tool that highlights potential issues in your app during development. Activates certain checks & warnings. Highlights deprecated methods etc. 
+
+- Delete App.js. Create new App.js. Create a functional component App. 
+
+App.js 
+
+const App = () =>{
+    return (
+        <div className="app">
+            <h1>My Youtube App is running!</h1>
+        </div>
+    )
+}
+
+export default App;
+
+- setup tailwindCSS (https://tailwindcss.com/docs/installation)
+* npm i -D tailwindcss 
+* create config file using npx tailwindcss init 
+* add what files to track in tailwind.config.js 
+* Add the Tailwind directives to your CSS for base, components, and utilities. 
+* import App.css in App.js 
+
+- Discuss Design in terms of components. 
+
+// App 
+//     Header 
+//         Logo 
+//         Search
+//         UserIcon
+//     Body 
+//         SideBar 
+//             MenuItems
+//         MainContainer 
+//             ButtonList 
+//             VideoContainer
+//                 VideoCard
+
+- Starting by building components. (rafce shortcut for creating components)
+
+
+import React from 'react'
+import SideBar from './SideBar'
+import MainContainer from './MainContainer'
+
+const Body = () => {
+  return (
+    <div className='flex'>
+        <SideBar />
+        <MainContainer />
+    </div>
+  )
+}
+
+export default Body
+
+- To get SideBar in left and Main Container in right side we use className = flex
