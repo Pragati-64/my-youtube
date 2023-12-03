@@ -73,7 +73,7 @@ export default Body
 - Youtube provides api to fetch videos! youtube video api 
 - Create api key using Google. youtube api key auth. Enable Youtube in library. https://console.cloud.google.com/apis/api/youtube.googleapis.com/metrics?project=my-first-project-406921
 
-
+- To fetch search params form url we can't use useParams. We have to use useSearchParams. 
 
 
 

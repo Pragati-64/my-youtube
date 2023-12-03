@@ -11,12 +11,12 @@ const Header = () => {
   }
 
   return (
-    <div className='grid grid-flow-col m-4 p-4 shadow-lg'>
+    <div className='grid grid-flow-col m-4 pb-4 shadow-lg'>
 
       <div className='flex col-span-1'>
-        <button onClick={()=>toggleMenuHandler()}><img alt='hamburger-menu-icon' src="/images/hamburger-menu.png" className='h-8' /></button>
+        <button onClick={()=>toggleMenuHandler()} className='pb-4 pl-3'><img alt='hamburger-menu-icon' src="/images/hamburger-menu.png" className='h-6 w-5'  /></button>
         
-        <img alt='youtube-logo' src="/images/youtube-logo.png" className='h-8 ml-4' />
+        <img alt='youtube-logo' src="/images/youtube-logo.png" className='h-6 ml-6' />
       </div>
 
       <div className='flex col-span-10 px-64 rounded-md'>
