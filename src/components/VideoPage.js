@@ -7,11 +7,11 @@ const VideoPage = () => {
 
     const dispatch = useDispatch();
     const [searchParams] = useSearchParams();
-    console.log(searchParams.get("v"));
+    // console.log(searchParams.get("v"));
 
     useEffect(()=>{
         dispatch(closeMenu());
-    },[])
+    })
 
   return (
     <div className='pt-4 pl-20'>

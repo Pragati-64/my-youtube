@@ -76,5 +76,15 @@ export default Body
 - To fetch search params form url we can't use useParams. We have to use useSearchParams. 
 
 
+High Order components - A function that takes a component & returns a new component. 
+
+How search works in youtube? 
+- Debouncing: It won't make an api call on each key stroke, on each letter pressed. It doesn't make sense. It will skip some events & this is called Debouncing. 
+- Debouncing with 200ms = If diff between 2 key strokes is < 200ms, decline api call. 
+
+Youtube api for search suggestions: http://suggestqueries.google.com/complete/search?client=firefox&ds=yt&q=hello
+
+- Implementing Debouncing using useEffect, setTimeout, return of useEffect.
+- setTimeout = Don't make api call right away, make after 200ms. If user presses another key before that, it will destrooy the new setTimeout and clear the last one. Again timer starts of 200ms!
 
 * Do you really need axios? You can use fetch! 

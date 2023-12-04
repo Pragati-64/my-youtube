@@ -1,13 +1,31 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { toggleMenu } from '../utils/appSlice';
+import { YOUTUBE_SUGGESTIONS_API } from '../utils/constants';
 
 const Header = () => {
 
   const dispatch = useDispatch();
+  const [searchInput, setSearchInput] = useState("");
 
   const toggleMenuHandler = ()=>{
     dispatch(toggleMenu());
+  }
+
+  useEffect(()=>{
+    
+    const timer = setTimeout(()=>getSuggestions(), 200);
+
+    return () => {
+      clearTimeout(timer);
+    };
+  }, [searchInput]);
+
+ const getSuggestions = async () => {
+  console.log(searchInput);
+    const data = await fetch(YOUTUBE_SUGGESTIONS_API + searchInput);
+    const json = await data.json();
+    // console.log(json[1]);
   }
 
   return (
@@ -20,7 +38,7 @@ const Header = () => {
       </div>
 
       <div className='flex col-span-10 px-64 rounded-md'>
-        <input type="text" placeholder=' Search' className='w-1/2 border border-gray-700 p-2 rounded-l-full shadow-md' />
+        <input type="text" placeholder=' Search' className='w-1/2 border border-gray-700 p-2 rounded-l-full shadow-md' value={searchInput} onChange={(e)=>setSearchInput(e.target.value)} />
         <button className='bg-gray-300 border border-black-200 w-20 p-2 rounded-r-full shadow-md'><img alt="search-icon" src="/images/search.png" className='h-5 ml-4 mt-1'/></button>
       </div>
 
