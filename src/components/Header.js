@@ -8,6 +8,7 @@ const Header = () => {
   const dispatch = useDispatch();
   const [searchInput, setSearchInput] = useState("");
   const [searchSuggestions, setSearchSuggestions] = useState([]);
+  const [showSuggestions, setShowSuggestions] = useState(false);
 
 
   const toggleMenuHandler = () => {
@@ -42,11 +43,11 @@ const Header = () => {
 
       <div className='col-span-10 px-64 rounded-md'>
         <div>
-          <input type="text" placeholder=' Search' className='w-1/2 border border-gray-700 p-2 rounded-l-full shadow-md px-5' value={searchInput} onChange={(e) => setSearchInput(e.target.value)} />
+          <input type="text" placeholder=' Search' className='w-1/2 border border-gray-700 p-2 rounded-l-full shadow-md px-5' value={searchInput} onChange={(e) => setSearchInput(e.target.value)} onFocus={()=>setShowSuggestions(true)} onBlur={()=>setShowSuggestions(false)} />
           <button className='bg-gray-300 w-20 h-10 p-2 rounded-r-full shadow-md'><img alt="search-icon" src="/images/search.png" className='h-5 ml-4' /></button>
         </div>
 
-        <div className='fixed bg-white py-2 px-2 w-[27rem] shadow-lg border border-black-200 rounded-md'>
+        { showSuggestions && (<div className='fixed bg-white py-2 px-2 w-[27rem] shadow-lg border border-black-200 rounded-md'>
           <ul>
             {
               searchSuggestions.map((suggestion)=>
@@ -55,7 +56,7 @@ const Header = () => {
               )
             }
           </ul>
-        </div>
+        </div>)}
 
       </div>
 

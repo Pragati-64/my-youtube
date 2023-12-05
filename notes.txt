@@ -88,6 +88,8 @@ Youtube api for search suggestions: http://suggestqueries.google.com/complete/se
 - setTimeout = Don't make api call right away, make after 200ms. If user presses another key before that, it will destrooy the new setTimeout and clear the last one. Again timer starts of 200ms!
 
 
+- When we type iphone, it's making API calls and we erase some letters then again it makes API calls. This is not optimised! 
+- Let's make cache inside redux. 
 
 
 * Do you really need axios? You can use fetch! 
