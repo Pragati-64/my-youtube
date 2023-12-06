@@ -83,7 +83,7 @@ const commentsData = [
 
 
 const Comment = ({data}) => {
-    const {name, text, replies} = data;
+    const {name, text} = data;
 
   return (
     <div className='flex p-3 shadow-sm bg-gray-100 rounded-md mt-5'>
@@ -92,7 +92,6 @@ const Comment = ({data}) => {
          <div className='px-3'>
             <p className='font-bold'>{name}</p>
             <p>{text}</p>
-            {/* <Comment data={replies[0]}/> */}
          </div>
     </div>
   )
@@ -101,8 +100,8 @@ const Comment = ({data}) => {
 
 const CommentsList = ({comments}) => {
     return comments.map((comment, index) =>(
-        <div>
-            <Comment key={index} data={comment} />
+        <div key={index}>
+            <Comment data={comment} />
             <div className='pl-5 ml-5 border border-l-black'>
             <CommentsList comments={comment.replies}/>
             </div>
